@@ -24,6 +24,12 @@
 }
 
 
+- (void)printPerson
+{
+    NSLog(@"My name is %@, i am %@ years old.", self->_name, self->_age);
+}
+
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"<%@: %p>", NSStringFromClass([self class]), self];

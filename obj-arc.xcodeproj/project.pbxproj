@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		03C973CD2FE0DBD50006F998 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C973CC2FE0DBD50006F998 /* XCTest.framework */; };
+		03C973E52FE4F5830006F998 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C973CC2FE0DBD50006F998 /* XCTest.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		03ED748C2FC40A54004744A3 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -19,32 +24,86 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		03C973CC2FE0DBD50006F998 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		03C973DC2FE4F36E0006F998 /* DynamicArchiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DynamicArchiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03ED748E2FC40A54004744A3 /* obj-arc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "obj-arc"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		03C973EF2FE4F8A40006F998 /* Exceptions for "obj-arc" folder in "DynamicArchiveTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				DynamicArchiveContainer.m,
+				DynamicArchiver.m,
+				IOHelper.m,
+			);
+			target = 03C973DB2FE4F36E0006F998 /* DynamicArchiveTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		03C973F02FE4F8A40006F998 /* Exceptions for "obj-arc" folder in "Compile Sources" phase from "DynamicArchiveTests" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 03C973D82FE4F36E0006F998 /* Sources */;
+			membershipExceptions = (
+				DynamicArchiveContainer.h,
+				DynamicArchiver.h,
+				IOHelper.h,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		03C973DD2FE4F36E0006F998 /* DynamicArchiveTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DynamicArchiveTests;
+			sourceTree = "<group>";
+		};
 		03ED74902FC40A54004744A3 /* obj-arc */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				03C973EF2FE4F8A40006F998 /* Exceptions for "obj-arc" folder in "DynamicArchiveTests" target */,
+				03C973F02FE4F8A40006F998 /* Exceptions for "obj-arc" folder in "Compile Sources" phase from "DynamicArchiveTests" target */,
+			);
 			path = "obj-arc";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		03C973D92FE4F36E0006F998 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03C973E52FE4F5830006F998 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		03ED748B2FC40A54004744A3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03C973CD2FE0DBD50006F998 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03C973CB2FE0DBD50006F998 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				03C973CC2FE0DBD50006F998 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		03ED74852FC40A54004744A3 = {
 			isa = PBXGroup;
 			children = (
 				03ED74902FC40A54004744A3 /* obj-arc */,
+				03C973DD2FE4F36E0006F998 /* DynamicArchiveTests */,
+				03C973CB2FE0DBD50006F998 /* Frameworks */,
 				03ED748F2FC40A54004744A3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				03ED748E2FC40A54004744A3 /* obj-arc */,
+				03C973DC2FE4F36E0006F998 /* DynamicArchiveTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,6 +120,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		03C973DB2FE4F36E0006F998 /* DynamicArchiveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03C973E02FE4F36E0006F998 /* Build configuration list for PBXNativeTarget "DynamicArchiveTests" */;
+			buildPhases = (
+				03C973D82FE4F36E0006F998 /* Sources */,
+				03C973D92FE4F36E0006F998 /* Frameworks */,
+				03C973DA2FE4F36E0006F998 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				03C973DD2FE4F36E0006F998 /* DynamicArchiveTests */,
+			);
+			name = DynamicArchiveTests;
+			packageProductDependencies = (
+			);
+			productName = DynamicArchiveTests;
+			productReference = 03C973DC2FE4F36E0006F998 /* DynamicArchiveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		03ED748D2FC40A54004744A3 /* obj-arc */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03ED74952FC40A54004744A3 /* Build configuration list for PBXNativeTarget "obj-arc" */;
@@ -73,6 +155,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				03C973DD2FE4F36E0006F998 /* DynamicArchiveTests */,
 				03ED74902FC40A54004744A3 /* obj-arc */,
 			);
 			name = "obj-arc";
@@ -91,6 +174,9 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 2650;
 				TargetAttributes = {
+					03C973DB2FE4F36E0006F998 = {
+						CreatedOnToolsVersion = 26.5;
+					};
 					03ED748D2FC40A54004744A3 = {
 						CreatedOnToolsVersion = 26.5;
 					};
@@ -111,11 +197,29 @@
 			projectRoot = "";
 			targets = (
 				03ED748D2FC40A54004744A3 /* obj-arc */,
+				03C973DB2FE4F36E0006F998 /* DynamicArchiveTests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		03C973DA2FE4F36E0006F998 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		03C973D82FE4F36E0006F998 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		03ED748A2FC40A54004744A3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -126,6 +230,34 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		03C973E12FE4F36E0006F998 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.soliez.DynamicArchiveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+			};
+			name = Debug;
+		};
+		03C973E22FE4F36E0006F998 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.soliez.DynamicArchiveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+			};
+			name = Release;
+		};
 		03ED74932FC40A54004744A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -260,6 +392,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		03C973E02FE4F36E0006F998 /* Build configuration list for PBXNativeTarget "DynamicArchiveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03C973E12FE4F36E0006F998 /* Debug */,
+				03C973E22FE4F36E0006F998 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		03ED74892FC40A54004744A3 /* Build configuration list for PBXProject "obj-arc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

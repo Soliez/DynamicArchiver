@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (instancetype)initWithName:(NSString *)name Age:(NSNumber *)age;
+- (void)printPerson;
 - (NSString *)description;
 
 @end
