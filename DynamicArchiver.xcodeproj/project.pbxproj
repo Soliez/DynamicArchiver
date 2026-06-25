@@ -66,13 +66,29 @@
 		03B50A172FE5220E000B9F28 /* TestPrimitivesObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestPrimitivesObject.h; sourceTree = "<group>"; };
 		03B50A182FE5220E000B9F28 /* TestPrimitivesObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestPrimitivesObject.m; sourceTree = "<group>"; };
 		03B50A1A2FE5220E000B9F28 /* DynamicArchiveTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicArchiveTests.m; sourceTree = "<group>"; };
+		03B50A402FEA6D7F000B9F28 /* libRuntimeInspector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRuntimeInspector.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		03C973CC2FE0DBD50006F998 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		03C973DC2FE4F36E0006F998 /* DynamicArchiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DynamicArchiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03C974472FE51E0B0006F998 /* libDynamicArchiver.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDynamicArchiver.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		03ED748E2FC40A54004744A3 /* dynarc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = dynarc; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		03B50A412FEA6D7F000B9F28 /* RuntimeInspector */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = RuntimeInspector;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
+		03B50A3E2FEA6D7F000B9F28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		03C973D92FE4F36E0006F998 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -187,6 +203,7 @@
 				03B50A0A2FE5220E000B9F28 /* Fixtures */,
 				03B50A142FE5220E000B9F28 /* Sources */,
 				03B50A1C2FE5220E000B9F28 /* Tests */,
+				03B50A412FEA6D7F000B9F28 /* RuntimeInspector */,
 				03C973CB2FE0DBD50006F998 /* Frameworks */,
 				03ED748F2FC40A54004744A3 /* Products */,
 			);
@@ -198,6 +215,7 @@
 				03ED748E2FC40A54004744A3 /* dynarc */,
 				03C973DC2FE4F36E0006F998 /* DynamicArchiveTests.xctest */,
 				03C974472FE51E0B0006F998 /* libDynamicArchiver.a */,
+				03B50A402FEA6D7F000B9F28 /* libRuntimeInspector.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -205,6 +223,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		03B50A3C2FEA6D7F000B9F28 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		03C974432FE51E0B0006F998 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -220,6 +245,28 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		03B50A3F2FEA6D7F000B9F28 /* RuntimeInspector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03B50A462FEA6D7F000B9F28 /* Build configuration list for PBXNativeTarget "RuntimeInspector" */;
+			buildPhases = (
+				03B50A3C2FEA6D7F000B9F28 /* Headers */,
+				03B50A3D2FEA6D7F000B9F28 /* Sources */,
+				03B50A3E2FEA6D7F000B9F28 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				03B50A412FEA6D7F000B9F28 /* RuntimeInspector */,
+			);
+			name = RuntimeInspector;
+			packageProductDependencies = (
+			);
+			productName = RuntimeInspector;
+			productReference = 03B50A402FEA6D7F000B9F28 /* libRuntimeInspector.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		03C973DB2FE4F36E0006F998 /* DynamicArchiveTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03C973E02FE4F36E0006F998 /* Build configuration list for PBXNativeTarget "DynamicArchiveTests" */;
@@ -288,6 +335,9 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 2650;
 				TargetAttributes = {
+					03B50A3F2FEA6D7F000B9F28 = {
+						CreatedOnToolsVersion = 26.5;
+					};
 					03C973DB2FE4F36E0006F998 = {
 						CreatedOnToolsVersion = 26.5;
 					};
@@ -316,6 +366,7 @@
 				03ED748D2FC40A54004744A3 /* dynarc */,
 				03C973DB2FE4F36E0006F998 /* DynamicArchiveTests */,
 				03C974462FE51E0B0006F998 /* DynamicArchiver */,
+				03B50A3F2FEA6D7F000B9F28 /* RuntimeInspector */,
 			);
 		};
 /* End PBXProject section */
@@ -331,6 +382,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		03B50A3D2FEA6D7F000B9F28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		03C973D82FE4F36E0006F998 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -375,6 +433,26 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		03B50A472FEA6D7F000B9F28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		03B50A482FEA6D7F000B9F28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		03C973E12FE4F36E0006F998 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -557,6 +635,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		03B50A462FEA6D7F000B9F28 /* Build configuration list for PBXNativeTarget "RuntimeInspector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03B50A472FEA6D7F000B9F28 /* Debug */,
+				03B50A482FEA6D7F000B9F28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		03C973E02FE4F36E0006F998 /* Build configuration list for PBXNativeTarget "DynamicArchiveTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

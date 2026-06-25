@@ -101,7 +101,7 @@ static NSString * const DynamicArchivePrimitiveKindPrimitive = @"primitive";
                 }
             } else {
                 /*
-                 TODO: Implement primitive Ivar archival support
+                 TODO: Add support for more complex primitives like structs
                  */
                 id boxedPrimitive = [self boxedPrimitiveValueForObject:obj ivar:ivar typeEncoding:typeEncoding];
                 if (boxedPrimitive) {

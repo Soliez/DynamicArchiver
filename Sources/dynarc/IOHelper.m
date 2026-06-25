@@ -9,6 +9,17 @@
 
 @implementation IOHelper
 
++ (NSData *)contentsOfFile:(NSString *)path
+{
+    NSError *error = nil;
+    NSData *data = [[NSData alloc] initWithContentsOfFile:path options:0 error:&error];
+    if (error) {
+        NSLog(@"<%@> Failed to read data from file at path '%@': %@", [self class], path, [error localizedDescription]);
+        return nil;
+    }
+    return data;
+}
+
 + (BOOL)writeData:(NSData *)data ToURL:(NSURL *)url
 {
     NSError *error = nil;
