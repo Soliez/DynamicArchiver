@@ -14,6 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)writeData:(NSData *)data ToURL:(NSURL *)url;
 + (BOOL)writeData:(NSData *)data ToFile:(NSString *)path;
 
++ (NSData *)contentsOfFileURL:(NSURL *)url;
++ (NSData *)contentsOfFile:(NSString *)path;
+
+
 + (NSData *)convertPropertyList:(NSData *)data toFormat:(NSPropertyListFormat)format;
 
 - (NSString *)description;

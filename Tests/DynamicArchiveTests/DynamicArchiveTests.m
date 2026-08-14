@@ -12,6 +12,7 @@
 
 #import "DynamicArchiver.h"
 #import "DynamicArchiveContainer.h"
+#import "RuntimeInspector.h"
 #import "IOHelper.h"
 
 
@@ -19,6 +20,8 @@
 @interface DynamicArchiveTests : XCTestCase
 - (void)testTestPerson;
 - (void)testTestPrimitivesObject;
+
+- (void)testUnarchivedObjectForFile;
 @end
 
 
@@ -87,5 +90,25 @@
     XCTAssertEqualObjects(restored->_stringValue, obj->_stringValue);
 }
 
-
+- (void)testUnarchivedObjectForFile
+{
+    //[@"~/Developer/ObjC/DynamicArchiver/Sources/RuntimeInspector/TestArchives/BundleMetadata.plist"]
+    NSURL *archiveURL= [[[[NSURL URLWithString:
+                             [NSString stringWithUTF8String:__FILE__]] URLByDeletingLastPathComponent]    URLByAppendingPathComponent:@"TestArchives" isDirectory: YES] URLByAppendingPathComponent:@"BundleMetadata.plist" isDirectory: NO];
+    
+    BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:archiveURL.path];
+    if (!fileExists) {
+        NSLog(@"%@", [NSString stringWithFormat:@"File Not Found: archiveURL '%@' is malformed or points to an invalid file path", archiveURL]);
+    }
+    XCTAssertTrue(fileExists);
+    
+    NSError *error = nil;
+    NSData *archiveData = [[NSData alloc] initWithContentsOfURL:archiveURL options:0 error:&error];
+    XCTAssertNotNil(archiveData, @"Failed to load contents of file from URL '%@'", archiveURL);
+    
+    NSLog(@"Attempting to unarchive file at URL: '%@'", archiveURL);
+    id obj = [DynamicArchiver loadObjectFromArchiveData:archiveData error:&error];
+    XCTAssertNotNil(obj, @"Failed to restore object from archive data: %@, from file: '%@' : %@", archiveData, archiveURL.path, error.localizedDescription);
+    [DynamicArchiver logObject:obj];
+}
 @end

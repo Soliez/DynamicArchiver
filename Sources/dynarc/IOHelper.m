@@ -20,6 +20,18 @@
     return data;
 }
 
++ (NSData *)contentsOfFileURL:(NSURL *)url
+{
+    NSError *error = nil;
+    NSData *data = [[NSData alloc] initWithContentsOfURL:url options:0 error:&error];
+    if (error) {
+        NSLog(@"<%@> Failed to read data from URL '%@': %@", [self class], url, [error localizedDescription]);
+        return nil;
+    }
+    return data;
+}
+
+
 + (BOOL)writeData:(NSData *)data ToURL:(NSURL *)url
 {
     NSError *error = nil;
