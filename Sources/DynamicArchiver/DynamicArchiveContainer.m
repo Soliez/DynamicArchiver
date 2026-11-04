@@ -437,7 +437,6 @@ static NSString * const DynamicArchivePrimitiveKindPrimitive = @"primitive";
     if (!self) { return nil; }
     
     _originalClassName = [coder decodeObjectOfClass:[NSString class] forKey:@"originalClassName"];
-    
     _encodedIvars = [coder decodeObjectOfClasses:[DynamicArchiveContainer allowedClasses] forKey:@"encodedIvars"];
    
     return self;
@@ -447,7 +446,6 @@ static NSString * const DynamicArchivePrimitiveKindPrimitive = @"primitive";
 
 
 - (id)reconstructedObject
-
 {
     Class cls = NSClassFromString(self.originalClassName);
     if (!cls) {
