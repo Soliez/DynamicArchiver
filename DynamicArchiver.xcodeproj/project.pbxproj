@@ -25,6 +25,10 @@
 		03B50A492FEE5DD1000B9F28 /* libRuntimeInspector.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B50A402FEA6D7F000B9F28 /* libRuntimeInspector.a */; };
 		03B50A4F2FEE5FAF000B9F28 /* RuntimeInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 03B50A4C2FEE5FAF000B9F28 /* RuntimeInspector.h */; };
 		03B50A502FEE5FAF000B9F28 /* RuntimeInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B50A4D2FEE5FAF000B9F28 /* RuntimeInspector.m */; };
+		03C0684130A3ACBF00DF5B28 /* MachHeader64.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C0684030A3ACBF00DF5B28 /* MachHeader64.m */; };
+		03C0684230A3ACBF00DF5B28 /* MachHeader64.h in Headers */ = {isa = PBXBuildFile; fileRef = 03C0683F30A3ACBF00DF5B28 /* MachHeader64.h */; };
+		03C0684630A6BC6A00DF5B28 /* MachHeader64.h in Headers */ = {isa = PBXBuildFile; fileRef = 03C0683F30A3ACBF00DF5B28 /* MachHeader64.h */; };
+		03C0684730A6BC8400DF5B28 /* MachHeader64.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C0684030A3ACBF00DF5B28 /* MachHeader64.m */; };
 		03C973E52FE4F5830006F998 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C973CC2FE0DBD50006F998 /* XCTest.framework */; };
 		03DB7A37300FEF16002033A9 /* TODO.md in Headers */ = {isa = PBXBuildFile; fileRef = 03DB7A36300FEF15002033A9 /* TODO.md */; };
 /* End PBXBuildFile section */
@@ -83,6 +87,8 @@
 		03B50A402FEA6D7F000B9F28 /* libRuntimeInspector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRuntimeInspector.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		03B50A4C2FEE5FAF000B9F28 /* RuntimeInspector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeInspector.h; sourceTree = "<group>"; };
 		03B50A4D2FEE5FAF000B9F28 /* RuntimeInspector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeInspector.m; sourceTree = "<group>"; };
+		03C0683F30A3ACBF00DF5B28 /* MachHeader64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MachHeader64.h; path = Sources/DynamicArchiver/MachHeader64.h; sourceTree = SOURCE_ROOT; };
+		03C0684030A3ACBF00DF5B28 /* MachHeader64.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MachHeader64.m; path = Sources/DynamicArchiver/MachHeader64.m; sourceTree = SOURCE_ROOT; };
 		03C973CC2FE0DBD50006F998 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		03C973DC2FE4F36E0006F998 /* DynamicArchiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DynamicArchiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03C974472FE51E0B0006F998 /* libDynamicArchiver.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDynamicArchiver.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +163,8 @@
 				03B50A0C2FE5220E000B9F28 /* DynamicArchiveContainer.m */,
 				03B50A0D2FE5220E000B9F28 /* DynamicArchiver.h */,
 				03B50A0E2FE5220E000B9F28 /* DynamicArchiver.m */,
+				03C0683F30A3ACBF00DF5B28 /* MachHeader64.h */,
+				03C0684030A3ACBF00DF5B28 /* MachHeader64.m */,
 			);
 			path = DynamicArchiver;
 			sourceTree = "<group>";
@@ -269,6 +277,7 @@
 			files = (
 				03B50A4F2FEE5FAF000B9F28 /* RuntimeInspector.h in Headers */,
 				03DB7A37300FEF16002033A9 /* TODO.md in Headers */,
+				03C0684630A6BC6A00DF5B28 /* MachHeader64.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +289,7 @@
 				03B50A262FE5220E000B9F28 /* TestPerson.h in Headers */,
 				03B50A2F2FE523F6000B9F28 /* TestPrimitivesObject.h in Headers */,
 				03B50A272FE5220E000B9F28 /* IOHelper.h in Headers */,
+				03C0684230A3ACBF00DF5B28 /* MachHeader64.h in Headers */,
 				03B50A282FE5220E000B9F28 /* DynamicArchiveContainer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03B50A502FEE5FAF000B9F28 /* RuntimeInspector.m in Sources */,
+				03C0684730A6BC8400DF5B28 /* MachHeader64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +465,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03B50A1E2FE5220E000B9F28 /* DynamicArchiver.m in Sources */,
+				03C0684130A3ACBF00DF5B28 /* MachHeader64.m in Sources */,
 				03B50A232FE5220E000B9F28 /* DynamicArchiveContainer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

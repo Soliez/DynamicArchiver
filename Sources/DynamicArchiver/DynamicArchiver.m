@@ -2,6 +2,7 @@
 
 #import "DynamicArchiver.h"
 #import "DynamicArchiveContainer.h"
+#import "MachHeader64.h"
 
 
 @implementation DynamicArchiver
@@ -53,6 +54,7 @@
           [NSDate class],
           [NSURL class],
           [NSNull class],
+          [MachHeader64 class],
           [DynamicArchiveContainer class],
           nil
         ];

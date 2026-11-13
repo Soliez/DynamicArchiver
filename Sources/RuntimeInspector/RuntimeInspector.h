@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
+#import <mach-o/loader.h>
 
 
 @interface RuntimeInspector : NSObject
@@ -36,6 +37,9 @@
 + (NSArray<NSString *> *)methodSelectorsForClass:(Class)cls;
 
 
+/**** Memory Inspection Utilities ****/
+
++ (NSArray<NSValue *> *)boxedMachHeadersForCurrentProcess;
 
 
 @end

@@ -8,7 +8,11 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 
+#import "MachHeader64.h"
 #import "RuntimeInspector.h"
+
+
+static size_t const MH64_SIZE = sizeof(struct mach_header_64);
 
 
 @implementation RuntimeInspector
@@ -147,6 +151,21 @@
     free(methodList);
     return [selectors copy];
 }
+
+
++ (NSArray<MachHeader64 *> *)boxedMachHeadersForCurrentProcess
+{
+    unsigned int count = 0;
+    const struct mach_header_64 **headers = (const struct mach_header_64 **)objc_copyImageHeaders(&count);
+    NSMutableArray<MachHeader64 *> *boxedHeaders = [NSMutableArray arrayWithCapacity:count];
+    for (unsigned int i = 0; i < count; i++) {
+        MachHeader64 *headerObject = [[MachHeader64 alloc] initWithMachHeader:*(headers[i])];
+        [boxedHeaders addObject:headerObject];
+    }
+    free(headers);
+    return [boxedHeaders copy];
+}
+
 
 @end
 
